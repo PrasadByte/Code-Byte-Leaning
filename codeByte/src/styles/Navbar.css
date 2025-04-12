@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  font-size: 16px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  padding-top: 110px; /* Adjust for fixed navbar + sub-navbar */
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 24px;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  margin-right: 3rem;
+}
+
+.navbar-section {
+  display: flex;
+  align-items: center;
+  margin-left: 10rem;
+}
+
+.navbar-section.left .nav-link,
+.navbar-section.right .icon-button,
+.navbar-section.right .signin-btn {
+  margin-right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.navbar-section.center {
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.navbar-logo {
+  height: 40px;
+}
+
+.search-container {
+  display: flex;
+  border: 1px solid green;
+  border-radius: 3px;
+  padding: 4px 8px;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 120px;
+}
+
+.search-clear {
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signin-btn {
+  background-color: #1f2937;
+ 
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+}
+
+/* ✅ FIXED: Left-aligned Sub Navbar */
+.sub-navbar {
+  position: fixed;
+  top: 60px;
+  display: flex;
+  justify-content: flex-start; /* 👈 LEFT alignment */
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 10px 20px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  z-index: 999;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.sub-navbar a {
+  margin: 0 12px;
+  color: #1f2937;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+body.dark {
+  background-color: #111;
+  color: white;
+}
