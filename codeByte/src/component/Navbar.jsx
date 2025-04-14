@@ -8,6 +8,8 @@ import { faMoon, faSun, faBell, faLanguage, faChevronLeft, faChevronRight } from
 const Navbar = () => {
   const [isDark, setIsDark] = useState(false);
 
+  const [searchTerm, setSearchTerm] = useState("");
+
   useEffect(() => {
     document.body.className = isDark ? "dark" : "";
   }, [isDark]);
@@ -34,14 +36,13 @@ const Navbar = () => {
 
         <div className="navbar-section right">
           <div className="search-container">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="search-input"
-            />
-            <span className="search-clear">✖</span>
+            <input type="text" placeholder="Search..." className="search-input"
+             value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+                <span className="search-clear" onClick={() => setSearchTerm("")}>✖</span>
           </div>
+          
           <button onClick={() => setIsDark(!isDark)} className="icon-button">
+        
             <FontAwesomeIcon icon={isDark ? faSun : faMoon} />
           </button>
           <button className="icon-button">
@@ -56,9 +57,7 @@ const Navbar = () => {
 
       {/* Sub Navbar */}
       <div className="sub-navbar">
-    
 
-        <div className="sub-navbar">
 
   <div className="sub-navbar-links">
     <Link to="/dsa" className="sub-link">DSA</Link>
@@ -83,12 +82,7 @@ const Navbar = () => {
     <Link to="/projects" className="sub-link">Projects</Link>
   </div>
 
- 
 </div>
-
-
-      
-      </div>
     </>
   );
 };
