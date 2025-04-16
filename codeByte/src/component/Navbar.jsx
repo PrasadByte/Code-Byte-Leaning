@@ -19,6 +19,7 @@ const Navbar = () => {
       {/* Top Navbar */}
       <nav className="navbar" >
         <div className="navbar-section left" >
+        <Link to="/home" className="sub-link">home</Link>
           <button className="nav-link">Courses</button>
           <button className="nav-link">Tutorials</button>
           <button className="nav-link">Jobs</button>
