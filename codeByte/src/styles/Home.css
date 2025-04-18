@@ -2,15 +2,28 @@
     display : flext;
     justify-content: centers;
     align-items: center;
-    height: 100vh;
-    margin-left: 35rem;
-    margin-top: 8rem;
+    height: 50%;
+    width: 100%;
+    margin-bottom: 40rem;
+    margin-left: 40rem;
+    
+  
+}
+.input-group{
+    margin-left: 1rem;
+    height: 4rem;
+    width: 50rem;
+    margin-top: 2rem;
 
 }
-
 /* //baki css udya */
+.courses{
+ margin-top: 2rem;
+ justify-content: right;
+    
+} 
 
-.card{
+.javascript-course{
    margin-top: 2rem;
    margin-right: 1rem;
 justify-items: right;
@@ -18,4 +31,4 @@ justify-content: right;
 width: 25rem;
 height: 15rem;
 
-}
+} */
