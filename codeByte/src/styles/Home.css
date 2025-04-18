@@ -18,17 +18,19 @@
 }
 /* //baki css udya */
 .courses{
- margin-top: 2rem;
- justify-content: right;
+ margin-top: 5rem;
+ margin-left: auto;
+ float: left;
+ text-align: left;
+ position: absolute;
+  left: 12%;
     
 } 
 
-.javascript-course{
-   margin-top: 2rem;
-   margin-right: 1rem;
-justify-items: right;
-justify-content: right;
-width: 25rem;
-height: 15rem;
-
-} */
+.card{
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to the next row */
+    gap: 10px;
+   
+    
+}
