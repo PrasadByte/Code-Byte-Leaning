@@ -9,3 +9,13 @@
 }
 
 /* //baki css udya */
+
+.card{
+   margin-top: 2rem;
+   margin-right: 1rem;
+justify-items: right;
+justify-content: right;
+width: 25rem;
+height: 15rem;
+
+}
