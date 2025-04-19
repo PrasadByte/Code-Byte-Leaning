@@ -19,13 +19,16 @@
 /* //baki css udya */
 .courses{
  margin-top: 5rem;
+ display: flex;
  margin-left: auto;
  float: left;
  text-align: left;
  position: absolute;
   left: 12%;
+
     
 } 
+
 
 .card{
     display: flex;

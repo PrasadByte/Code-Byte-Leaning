@@ -17,7 +17,7 @@ export default function Home() {
         </button>
       </div>
       <div className="courses">
-        <h5>Courses</h5>
+        <h5 id="courses-main">Courses</h5>
         <div className="card" style={{ width: "18rem" }}>
           <img
             src="https://via.placeholder.com/150"
