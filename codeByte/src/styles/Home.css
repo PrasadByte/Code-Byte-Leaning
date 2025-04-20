@@ -1,13 +1,15 @@
 .home-container{
     display : flext;
-    justify-content: centers;
-    align-items: center;
-    height: 50%;
-    width: 100%;
+   
+    height: auto;
+    width: auto;
     margin-bottom: 40rem;
     margin-left: 40rem;
     
   
+}
+#courses-main{
+    margin-bottom: rem;
 }
 .input-group{
     margin-left: 1rem;
@@ -20,20 +22,42 @@
 .courses{
  margin-top: 5rem;
  display: flex;
+ flex-wrap: wrap;
  margin-left: auto;
+ gap: 10px;
  float: left;
  text-align: left;
  position: absolute;
   left: 12%;
+  width: 80%;
+  height: auto;
+   
 
     
 } 
+#courses-main{
+    margin-top: 6rem;
+  
+  margin-left: auto;
+  margin-left: auto;
+    float: left;
+    text-align: left;
+    position: absolute;
+    right: 144%;
+   
+}
 
 
 .card{
     display: flex;
-    flex-wrap: wrap; /* Allows cards to wrap to the next row */
+    flex-direction: column; /* Stack items vertically */
+    flex-wrap: wrap;
     gap: 10px;
+    margin-right: 5rem;
+    align-items: center;
+    border-radius: 15px;
+    overflow: hidden; 
+    border: 1px solid #ddd; 
    
     
 }
