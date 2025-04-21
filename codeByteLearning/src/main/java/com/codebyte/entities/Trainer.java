@@ -1,6 +1,6 @@
 package com.codebyte.entities;
 
-import java.util.List;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,16 +18,17 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
-@Table(name = "learners_table")
-public class Users {
-    @Id
+@Table(name = "trainer_table")
+public class Trainer {
+    @Id  // Added missing @Id annotation
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String email;
     private String password;
     private String phone;
-
-    @OneToMany(mappedBy = "learner")
-    private List<Course> courses; // Corrected mappedBy reference
+    private String expertise;
+    private String experience;
+    @OneToMany(mappedBy = "trainer")
+    private Set<Course> courses; // Corrected mappedBy reference
 }
