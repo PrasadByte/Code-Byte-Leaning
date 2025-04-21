@@ -11,6 +11,9 @@ export default function Home() {
    <CourcesCard />
    <Footer />
    <Navbar />
+
+
+   {/* this is comment */}
    </>
   )
 }
