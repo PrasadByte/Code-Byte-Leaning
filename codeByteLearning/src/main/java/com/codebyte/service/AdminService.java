@@ -7,7 +7,7 @@ import com.codebyte.entities.Admin;
 
 public interface AdminService {
 	   // Method to add a new admin with ResponseEntity
-    ResponseEntity<Admin> addAdmin(AdminDTO admin);
+    ResponseEntity<Admin> registerAdmin(AdminDTO admin);
 	
 	
 }

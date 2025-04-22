@@ -18,5 +18,11 @@ public class AdminServiceImpl implements AdminService {
         this.adminDao = adminDao;
     }
 
+	@Override
+	public ResponseEntity<Admin> addAdmin(AdminDTO admin) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
   
 }
