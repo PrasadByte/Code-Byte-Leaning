@@ -2,7 +2,7 @@ package com.codebyte.service;
 
 import org.springframework.http.ResponseEntity;
 
-import com.codebyte.dto.AdminDTO;
+import com.codebyte.dtos.AdminDTO;
 import com.codebyte.entities.Admin;
 
 public interface AdminService {

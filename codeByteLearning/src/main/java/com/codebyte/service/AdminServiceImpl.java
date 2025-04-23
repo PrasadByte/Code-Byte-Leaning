@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.codebyte.dao.Admindao;
-import com.codebyte.dto.AdminDTO;
+import com.codebyte.dtos.AdminDTO;
 import com.codebyte.entities.Admin;
 
 @Service
