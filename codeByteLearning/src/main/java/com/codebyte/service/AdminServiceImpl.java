@@ -20,8 +20,7 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public ResponseEntity<Admin> addAdmin(AdminDTO admin) {
-		// TODO Auto-generated method stub
-		return null;
+		
 	}
 
   
