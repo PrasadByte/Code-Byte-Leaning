@@ -1,5 +1,5 @@
 package com.codebyte.service;
 
-public interface UserService {
+public interface AuthService {
 
 }

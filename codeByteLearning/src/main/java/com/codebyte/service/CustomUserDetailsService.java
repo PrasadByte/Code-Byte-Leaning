@@ -1,5 +1,5 @@
 package com.codebyte.service;
 
-public class CustomUserDetailsService {
+public interface CustomUserDetailsService {
 
 }
