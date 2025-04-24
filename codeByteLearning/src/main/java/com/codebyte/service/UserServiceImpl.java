@@ -1,5 +1,7 @@
 package com.codebyte.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.codebyte.dao.UserRepository;
@@ -31,6 +33,24 @@ public class UserServiceImpl implements UserService {
 
 		user.setRole(Role.TRAINER);
 		return userRepository.save(user);
+	}
+
+	@Override
+	public List<User> findAllUsers() {
+		return userRepository.findAll();
+		 
+	}
+
+	@Override
+	public User findUserById(int userId) {
+		
+		return userRepository.findById(userId).orElse(null);
+	}
+
+	@Override
+	public User updateUser(int userId, User user) {
+	return	userRepository.findById(userId).orElse(null);
+		
 	}
 
 
