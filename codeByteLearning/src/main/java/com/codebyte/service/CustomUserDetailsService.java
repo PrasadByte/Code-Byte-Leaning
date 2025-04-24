@@ -1,5 +1,7 @@
 package com.codebyte.service;
 
-public interface CustomUserDetailsService {
+import org.springframework.security.core.userdetails.UserDetailsService;
 
+public interface CustomUserDetailsService extends UserDetailsService {
+	
 }

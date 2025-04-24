@@ -2,8 +2,6 @@ package com.codebyte.entities;
 
 import java.util.List;
 
-import javax.management.relation.Role;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -29,7 +27,7 @@ public class User {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
+
     private String name;
     private String email;
     private String password;
@@ -39,5 +37,5 @@ public class User {
     private Role role;
     
     @OneToMany(mappedBy = "learner", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<courses> courses;
+    private List<Courses> courses;
 }
