@@ -33,7 +33,7 @@ public class UserController {
 		return ResponseEntity.ok(userService.createTrainer(user));
 	}
 	// create user
-	@PostMapping("/user")
+	@PostMapping("/learner")
 	public ResponseEntity<User> createUser(@RequestBody User user) {
 		return ResponseEntity.ok(userService.createUser(user));
 	}
