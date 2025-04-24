@@ -1,5 +1,10 @@
 package com.codebyte.dao;
 
-public interface UserRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.codebyte.entities.User;
+
+public interface UserRepository extends JpaRepository<User, Integer> {
+	
 
 }
