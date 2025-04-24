@@ -3,11 +3,12 @@ package com.codebyte.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.codebyte.dao.CourseRepository;
 import com.codebyte.dtos.CourseDTO;
 import com.codebyte.entities.Courses;
-
+@Service
 public class CourseServiceImpl implements CourseService {
 	@Autowired
 	private CourseRepository courseRepository;
