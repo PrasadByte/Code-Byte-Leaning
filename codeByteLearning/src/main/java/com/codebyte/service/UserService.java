@@ -6,5 +6,5 @@ public interface UserService {
 	public User createAdmin(User user);
 	public User createUser(User user);
 	public User createTrainer(User user);
-	public User createLearner(User user);
+
 }
