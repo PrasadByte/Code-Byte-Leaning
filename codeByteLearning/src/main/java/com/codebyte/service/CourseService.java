@@ -8,7 +8,6 @@ import com.codebyte.entities.Courses;
 
 
 public interface CourseService {
-	
 	// add a new course
  Courses addCourse(Courses course);
  	// delete a course
