@@ -1,23 +1,32 @@
 package com.codebyte.service;
 
+import com.codebyte.dao.UserRepository;
+import com.codebyte.entities.User;
 
-
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;
 
-
-  // Assuming you have a User repository to fetch users from DB
+import java.util.Collections;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-	
-		return null;
-	}
+    @Autowired
+    private UserRepository userRepository;
 
-   
+    // Loads user from DB using email as username
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(email)
+            .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
+
+        // Return a Spring Security User object
+        return new org.springframework.security.core.userdetails.User(
+                user.getEmail(),
+                user.getPassword(),
+                Collections.singleton(new SimpleGrantedAuthority("ROLE_" + user.getRole().name()))
+        );
+    }
 }

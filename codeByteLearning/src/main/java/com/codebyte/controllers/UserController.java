@@ -21,6 +21,7 @@ import com.codebyte.service.UserServiceImpl;
 public class UserController {
 	@Autowired
 	private UserServiceImpl userService;
+	
 	//create  Admin
 	@PostMapping("/admin")
 	public ResponseEntity<User> createAdmin(@RequestBody User user) {

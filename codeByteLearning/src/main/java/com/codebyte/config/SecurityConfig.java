@@ -1,10 +1,11 @@
 package com.codebyte.config;
 
-
+import com.codebyte.service.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
-
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -12,26 +13,38 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-@EnableMethodSecurity  // Allows the use of annotations like @PreAuthorize for method-level security
-public class SecurityConfig  {
-	 
-	 @Bean
-	    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-	        http.csrf().disable() // Disable CSRF for simplicity (can be enabled later)
-	            .authorizeHttpRequests()
-	            .requestMatchers("/api/user/learner", "/api/user/trainer", "/api/user/admin", "/api/user/getAll").permitAll() // Allow public access to these endpoints
-	            .requestMatchers(HttpMethod.POST, "/api/user/**").permitAll() // Allow POST for user creation
-	            .anyRequest().authenticated() // Secure the rest of the endpoints
-	            .and()
-	            .httpBasic(); // Or form login if needed
-	        
-	        return http.build();
-	    }
+@EnableMethodSecurity
+public class SecurityConfig {
 
-	
-	
-	 @Bean
-	    public PasswordEncoder passwordEncoder() {
-	        return new BCryptPasswordEncoder();
-	    }
+    // Optional: If you ever need direct access to CustomUserDetailsService
+    private final CustomUserDetailsService userDetailsService;
+
+    public SecurityConfig(CustomUserDetailsService userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
+
+    @SuppressWarnings("removal")
+	@Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.csrf().disable()
+            .authorizeHttpRequests(authz -> authz
+            		.requestMatchers(HttpMethod.POST, "/api/user/learner").permitAll()
+                .requestMatchers("/api/user/**").authenticated()
+                .anyRequest().authenticated()
+            )
+            .httpBasic();
+        return http.build();
+    }
+
+    // ✅ Encode passwords using BCrypt
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    // ✅ AuthenticationManager that connects security with the DB-based user auth
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+        return config.getAuthenticationManager();
+    }
 }
