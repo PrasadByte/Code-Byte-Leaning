@@ -28,9 +28,9 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
             .authorizeHttpRequests(authz -> authz
-            		.requestMatchers(HttpMethod.POST, "/api/user/learner").permitAll()
-                .requestMatchers("/api/user/**").authenticated()
-                .anyRequest().authenticated()
+            		.requestMatchers(HttpMethod.POST, "/api/user").permitAll()
+            		.requestMatchers("/api/user/**").authenticated()
+            		.anyRequest().authenticated()
             )
             .httpBasic();
         return http.build();
