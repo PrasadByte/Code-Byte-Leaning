@@ -36,13 +36,13 @@ public class SecurityConfig {
         return http.build();
     }
 
-    // ✅ Encode passwords using BCrypt
+ 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-    // ✅ AuthenticationManager that connects security with the DB-based user auth
+    
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
