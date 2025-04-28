@@ -1,6 +1,7 @@
 package com.codebyte.config;
 
-import com.codebyte.service.CustomUserDetailsService;
+import java.beans.Customizer;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -12,37 +13,40 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+
+
+import com.codebyte.service.CustomUserDetailsService;
+
+
 @Configuration
 @EnableMethodSecurity
 public class SecurityConfig {
 
-    // Optional: If you ever need direct access to CustomUserDetailsService
     private final CustomUserDetailsService userDetailsService;
 
     public SecurityConfig(CustomUserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
 
-    @SuppressWarnings("removal")
-	@Bean
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable()
+        http
+            .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(authz -> authz
-            		.requestMatchers(HttpMethod.POST, "/api/user").permitAll()
-            		.requestMatchers("/api/user/**").authenticated()
-            		.anyRequest().authenticated()
-            )
-            .httpBasic();
+                .requestMatchers(HttpMethod.POST, "/api/user/**").permitAll()
+                .requestMatchers("/api/user/**").authenticated()
+                .anyRequest().authenticated()
+            );
+             // <-- no error now
+
         return http.build();
     }
 
- 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-    
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
