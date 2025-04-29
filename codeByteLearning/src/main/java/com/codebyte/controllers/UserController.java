@@ -28,6 +28,11 @@ public class UserController {
 	public ResponseEntity<User> createAdmin(@RequestBody User user) {
 		return ResponseEntity.ok(userService.createAdmin(user));
 	}
+	//create  Admin
+		@PostMapping("/register")
+		public ResponseEntity<User> register(@RequestBody User user) {
+			return ResponseEntity.ok(userService.createAdmin(user));
+		}
 	
 	// create trainer
 	@PostMapping("/trainer")
