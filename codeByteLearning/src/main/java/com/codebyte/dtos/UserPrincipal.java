@@ -17,7 +17,7 @@ public class UserPrincipal  implements UserDetails{
 	private User user;
 
     public UserPrincipal(Optional<User> user2) {
-        this.user = user2;
+        this.user = user;
     }
 
     @Override

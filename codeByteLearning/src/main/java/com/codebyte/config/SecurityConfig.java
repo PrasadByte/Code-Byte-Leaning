@@ -17,8 +17,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.codebyte.service.CustomUserDetailsService;
-import com.telusko.part29springsecex.config.JwtFilter;
+
+import jakarta.servlet.Filter;
 
 @Configuration
 @EnableMethodSecurity
@@ -39,29 +39,12 @@ public class SecurityConfig {
                         .anyRequest().authenticated()).
                 httpBasic(Customizer.withDefaults()).
                 sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore((Filter) jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 
 
-//    @Bean
-//    public UserDetailsService userDetailsService() {
-//
-//        UserDetails user1 = User
-//                .withDefaultPasswordEncoder()
-//                .username("kiran")
-//                .password("k@123")
-//                .roles("USER")
-//                .build();
-//
-//        UserDetails user2 = User
-//                .withDefaultPasswordEncoder()
-//                .username("harsh")
-//                .password("h@123")
-//                .roles("ADMIN")
-//                .build();
-//        return new InMemoryUserDetailsManager(user1, user2);
-//    }
+
 
     @Bean
     public AuthenticationProvider authenticationProvider() {

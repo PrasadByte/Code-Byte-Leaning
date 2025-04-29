@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codebyte.entities.User;
-import com.codebyte.service.CustomUserDetailsService;
+
 import com.codebyte.service.UserServiceImpl;
 
 @RestController
