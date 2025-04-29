@@ -16,6 +16,7 @@ import com.codebyte.entities.User;
 
 import com.codebyte.service.UserServiceImpl;
 
+
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
@@ -38,6 +39,15 @@ public class UserController {
 	public ResponseEntity<User> createUser(@RequestBody User user) {
 		return ResponseEntity.ok(userService.createUser(user));
 	}
+	//login  for all users
+	
+    @PostMapping("/login")
+    public String login(@RequestBody User user) {
+
+        return userService.verify(user);
+    }
+	
+	
 	//get all users
 	@PostMapping("/getAll")
 	public ResponseEntity<List<User>> getAllUsers() {
