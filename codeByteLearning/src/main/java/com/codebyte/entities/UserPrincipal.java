@@ -1,22 +1,18 @@
-package com.codebyte.dtos;
-
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Optional;
+package com.codebyte.entities;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.codebyte.entities.User;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Optional;
 
+public class UserPrincipal implements UserDetails {
 
+    private Optional<User> user;
 
-public class UserPrincipal  implements UserDetails{
-
-	private User user;
-
-    public UserPrincipal(Optional<User> user2) {
+    public UserPrincipal(Optional<User> user) {
         this.user = user;
     }
 
@@ -27,12 +23,12 @@ public class UserPrincipal  implements UserDetails{
 
     @Override
     public String getPassword() {
-        return user.getPassword();
+        return user.get().getPassword();
     }
 
     @Override
     public String getUsername() {
-        return user.getEmail();
+        return user.get().getEmail();
     }
 
     @Override
@@ -54,5 +50,4 @@ public class UserPrincipal  implements UserDetails{
     public boolean isEnabled() {
         return true;
     }
-
 }

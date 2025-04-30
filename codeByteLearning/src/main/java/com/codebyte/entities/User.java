@@ -34,7 +34,7 @@ public class User {
     private String phone;
     
     @Enumerated(EnumType.STRING)
-    private Role role;
+    private Role role; 	
     
     @OneToMany(mappedBy = "learner", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Courses> courses;

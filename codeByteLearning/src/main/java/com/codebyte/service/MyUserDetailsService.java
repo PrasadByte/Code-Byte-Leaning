@@ -1,16 +1,15 @@
 package com.codebyte.service;
 
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
 import com.codebyte.dao.UserRepository;
-import com.codebyte.dtos.UserPrincipal;
+
 import com.codebyte.entities.User;
+import com.codebyte.entities.UserPrincipal;
 
 
 @Service
