@@ -1,5 +1,7 @@
 import React from "react";
 import "../styles/CourcesCard.css";
+import { Link } from "react-router-dom";
+import AuthForm from "./AuthForm";
 
 export default function CourcesCard() {
   <>
@@ -34,9 +36,9 @@ export default function CourcesCard() {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
+           <Link to="/register">
+           Go somewhere</Link>
+           
           </div>
         </div>
         <div className="card" style={{ width: "18rem" }}>
@@ -51,9 +53,8 @@ export default function CourcesCard() {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
+            <Link to="/register">
+           Go somewhere</Link>
           </div>
         </div>
         <div className="card" style={{ width: "18rem" }}>
@@ -68,9 +69,8 @@ export default function CourcesCard() {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
+            <Link to="/register">
+            Go somewhere</Link>
           </div>
         </div>
         <div className="card" style={{ width: "18rem" }}>
@@ -85,9 +85,8 @@ export default function CourcesCard() {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
+            <Link to="/register">
+           Go somewhere</Link>
           </div>
         </div>
         <div className="card" style={{ width: "18rem" }}>
@@ -102,9 +101,8 @@ export default function CourcesCard() {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
+            <Link to="/register">
+           Go somewhere</Link>
           </div>
         </div>
         <div className="card" style={{ width: "18rem" }}>
@@ -119,9 +117,8 @@ export default function CourcesCard() {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
+            <Link to="/register">
+           Go somewhere</Link>
           </div>
         </div>
         <div className="card" style={{ width: "18rem" }}>
@@ -136,9 +133,8 @@ export default function CourcesCard() {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
+            <Link to="/register">
+            Go somewhere</Link>
           </div>
         </div>
         <div className="card" style={{ width: "18rem" }}>
@@ -153,9 +149,8 @@ export default function CourcesCard() {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
+            <Link to="/register">
+           Go somewhere</Link>
           </div>
         </div>
         
