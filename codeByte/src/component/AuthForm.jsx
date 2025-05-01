@@ -20,6 +20,7 @@ export default function AuthForm() {
                 <button id="close" className="close-btn" onClick={handleClose}>
                     &times; {/* Close button (X) */}
                 </button>
+                
                 <div className="form-toggle">
                     <button
                         className={isLogin ? "active" : ""}
@@ -38,6 +39,21 @@ export default function AuthForm() {
                     <React.Fragment>
                         <div className="form">
                             <h2>Login form</h2>
+                            <label>Login as:</label>
+                            <div className="radio-group">
+                                <label>
+                                    <input type="radio" className="login-radio" name="login" value="Learner" />
+                                    Learner
+                                </label>
+                                <label>
+                                    <input type="radio" className="login-radio" name="login" value="Trainer" />
+                                    Trainer
+                                </label>
+                                <label>
+                                    <input type="radio" className="login-radio" name="login" value="Admin" />
+                                    Admin
+                                </label>
+                            </div>
                             <input
                                 type="email"
                                 placeholder="Enter your email id"

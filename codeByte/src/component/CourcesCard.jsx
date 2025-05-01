@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/CourcesCard.css";
 import { Link } from "react-router-dom";
-import AuthForm from "./AuthForm";
+
 
 export default function CourcesCard() {
   <>
