@@ -16,6 +16,8 @@ const Footer = () => {
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
+
+        {/* hi we will continoue to work on this project and add more features in the future. */}
       </div>
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p>

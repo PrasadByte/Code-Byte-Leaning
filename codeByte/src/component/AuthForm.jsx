@@ -88,6 +88,12 @@ export default function AuthForm() {
                             placeholder="Confirm password"
                             className="input-field"
                         />
+                        <input
+                            type="password"
+                            placeholder="Phone number"
+                            className="input-field"
+                        />
+
                         <button>Sign Up</button>
                     </div>
                 ) : null}
