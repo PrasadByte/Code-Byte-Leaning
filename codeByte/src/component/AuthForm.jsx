@@ -4,7 +4,7 @@ import "../styles/AuthForm.css";
 
 export default function AuthForm() {
     const [isLogin, setIsLogin] = useState(true);
-    const [isVisible, setIsVisible] = useState(true); // State to control visibility
+    const [isVisible, setIsVisible] = useState(true); 
 
     const handleClose = () => {
         setIsVisible(false); // Close the form
