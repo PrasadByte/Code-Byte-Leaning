@@ -152,7 +152,7 @@ export default function CourcesCard() {
             <Link to="/register">
            Go somewhere</Link>
           </div>
-          
+
         </div>
         
       </div>
