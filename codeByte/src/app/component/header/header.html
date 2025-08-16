@@ -1,0 +1,35 @@
+<nav class="navbar">
+  <div class="navdiv">
+    <!-- Logo -->
+    <div class="logo"><a href="#">Code Byte</a></div>
+
+    <!-- Hamburger -->
+    <div class="menu-hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Links -->
+    <ul class="nav-links" [class.active]="menuOpen">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <!-- Right side: Search + Signup -->
+    <div class="right-section" [class.active]="menuOpen">
+      <form class="d-flex" (ngSubmit)="onSearch()">
+        <input
+          class="form-control"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn" type="submit" style="border-radius: 20px;">Search</button>
+      </form>
+    
+      <button id="signup"><a href="#">SignUp</a></button>
+    </div>
+  </div>
+</nav>

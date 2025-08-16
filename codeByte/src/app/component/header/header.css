@@ -1,0 +1,125 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  margin-top: 70px;
+}
+
+.navbar {
+  background: crimson;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navdiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo a {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Right side section */
+.right-section {
+  margin-left: 900px;
+  display: flex;
+  gap: 10px;
+}
+
+.d-flex {
+  display: flex;
+  gap: 5px;
+}
+
+.form-control {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.btn {
+  padding: 5px 10px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#signup {
+  background: black;
+  border-radius: 20px;
+  padding: 8px 15px;
+  border: none;
+}
+
+#signup a {
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* Hamburger Menu */
+.menu-hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links,
+  .right-section {
+    display: none;
+    flex-direction: column;
+    background: crimson;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-links.active,
+  .right-section.active {
+    display: flex;
+  }
+
+  .menu-hamburger {
+    display: flex;
+  }
+}
