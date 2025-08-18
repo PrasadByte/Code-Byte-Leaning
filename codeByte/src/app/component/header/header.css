@@ -8,8 +8,10 @@
 
 body {
   margin-top: 70px;
+  font-family: Calibri, sans-serif;
 }
 
+/* Navbar container */
 .navbar {
   background: crimson;
   padding: 10px 20px;
@@ -26,12 +28,14 @@ body {
   flex-wrap: wrap;
 }
 
+/* Logo */
 .logo a {
   font-size: 30px;
   font-weight: bold;
   color: white;
 }
 
+/* Links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -46,13 +50,29 @@ body {
   color: white;
   font-size: 18px;
   font-weight: bold;
+  padding: 5px 10px;
+  transition: all 0.3s;
 }
 
-/* Right side section */
+/* Active link style (Angular routerLinkActive) */
+.nav-links li a.active {
+  background: white;
+  color: crimson;
+  border-radius: 5px;
+}
+
+/* Hover effect */
+.nav-links li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Right section (search + signup) */
 .right-section {
-  margin-left: 900px;
   display: flex;
+  align-items: center;
   gap: 10px;
+  margin-left: 600px;
 }
 
 .d-flex {
@@ -64,6 +84,7 @@ body {
   padding: 5px 10px;
   border-radius: 5px;
   border: none;
+  outline: none;
 }
 
 .btn {
@@ -73,6 +94,11 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #333;
 }
 
 #signup {
@@ -80,6 +106,12 @@ body {
   border-radius: 20px;
   padding: 8px 15px;
   border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#signup:hover {
+  background: #333;
 }
 
 #signup a {
@@ -103,7 +135,12 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+  .navdiv {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .nav-links,
   .right-section {
     display: none;
@@ -121,5 +158,10 @@ body {
 
   .menu-hamburger {
     display: flex;
+    margin-left: auto;
+  }
+
+  .right-section {
+    justify-content: center;
   }
 }

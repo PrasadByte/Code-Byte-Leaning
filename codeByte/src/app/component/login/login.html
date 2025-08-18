@@ -1,0 +1,67 @@
+<div class="wrapper" [class.active]="!isLoginActive">
+  <span class="bg-animate"></span>
+  <span class="bg-animate2"></span>
+
+  <!-- LOGIN FORM -->
+  <div class="form-box login">
+    <h2>Login</h2>
+    <form>
+      <div class="input-box">
+        <input type="text" required>
+        <label>User name</label>
+        <i class='bx bx-user'></i> 
+      </div>
+      <div class="input-box">
+        <input type="password" required>
+        <label>Password</label>
+        <i class='bx bx-lock'></i> 
+      </div>
+      <button type="submit" class="btn">Login</button>
+      <div class="logreg-link">
+        <p>Don't have an account? 
+          <a href="javascript:void(0)" (click)="showRegister()">Sign Up</a>
+        </p>
+      </div>
+    </form>
+  </div>
+
+  <!-- LOGIN INFO TEXT -->
+  <div class="info-text login">
+    <h2>Welcome Back</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  </div>
+
+  <!-- REGISTER FORM -->
+  <div class="form-box register">
+    <h2>Sign Up</h2>
+    <form>
+      <div class="input-box">
+        <input type="text" required>
+        <label>User name</label>
+        <i class='bx bx-user'></i> 
+      </div>
+      <div class="input-box">
+        <input type="text" required>
+        <label>Email</label>
+        <i class='bx bx-envelope-open'></i>  
+      </div>
+      <div class="input-box">
+        <input type="password" required>
+        <label>Password</label>
+        <i class='bx bx-lock'></i> 
+      </div>
+      <button type="submit" class="btn">Sign Up</button>
+      <div class="logreg-link">
+        <p>Already have an account? 
+          <a href="javascript:void(0)" (click)="showLogin()">Login</a>
+        </p>
+      </div>
+    </form>
+  </div>
+
+  <!-- REGISTER INFO TEXT -->
+  <div class="info-text register">
+    <h2>Welcome Friend</h2>
+    <p>Join us today and explore awesome features!</p>
+  </div>
+</div>
